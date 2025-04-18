@@ -5,6 +5,8 @@ import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlinePlace } from "react-icons/md";
 import Reviews from "./components/Reviews";
+import { useParams } from "next/navigation";
+import { useBrewery } from "../../hooks/useBreweries";
 
 const mockOpinions = [
   {
@@ -45,19 +47,38 @@ const mockOpinions = [
 ];
 
 function Place() {
+  const { id } = useParams();
+  // TODO: Evaluar caso de error
+  const { data, isLoading } = useBrewery(id as string);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1>No se encontró la cervecería</h1>
+      </div>
+    );
+  }
   return (
     <div className="container mx-auto py-6">
       <div className="mb-8">
         <div className="flex items-end gap-4 mb-4">
-          <h1 className="text-4xl font-bold">Bar Nim</h1>
+          <h1 className="text-4xl font-bold">{data?.name}</h1>
         </div>
         <div className="flex items-center gap-2 text-gray-400 mb-1">
           <MdOutlinePlace className="w-5 h-5" />
-          <span>Havre 73, Juárez, Cuauhtémoc</span>
+          <span>{data?.address_1 || "No especificada"}</span>
         </div>
         <div className="flex items-center gap-2 text-gray-400">
           <FaPhoneAlt className="w-4 h-4" />
-          <span>4235-8766</span>
+          <span>{data?.phone || "No disponible"}</span>
         </div>
       </div>
 

@@ -23,12 +23,12 @@ function Card({ name, address_1, city, phone, id }: Brewery) {
               title={`${address_1}, ${city}`}
               className="text-sm overflow-hidden text-ellipsis whitespace-nowrap block w-full max-w-[160px]"
             >
-              {address_1}, {city}
+              {address_1 || 'No especificada'}, {city}
             </span>
           </div>
           <div className="flex items-center text-sm mb-1 gap-1">
             <FaPhoneAlt className="w-4 h-4 inline-block mr-1" />
-            <span className="text-sm">{phone}</span>
+            <span className="text-sm">{phone || 'No disponible'}</span>
           </div>
         </div>
       </div>
