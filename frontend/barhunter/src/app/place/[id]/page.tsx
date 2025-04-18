@@ -87,8 +87,8 @@ function Place() {
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col gap-4">
-        <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold">
+      <div className="mt-8 flex flex-col gap-4 md:flex-row md:justify-center md:gap-8">
+        <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold w-full md:w-64">
           Reservar mesa
         </button>
         <button className="px-[2px] py-[2px] text-white font-semibold rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:to-pink-600">
