@@ -3,9 +3,10 @@ import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlinePlace } from "react-icons/md";
 import { Brewery } from "../(main)/types";
+import Link from "next/link";
 
 
-function Card({ name, address_1, city, phone }: Brewery) {
+function Card({ name, address_1, city, phone, id }: Brewery) {
   return (
     <div className="bg-[#0f172a] text-white p-4 rounded-lg shadow-md max-w-sm flex flex-col gap-4">
       <h2 className="text-lg font-bold">{name}</h2>
@@ -31,9 +32,12 @@ function Card({ name, address_1, city, phone }: Brewery) {
           </div>
         </div>
       </div>
-      <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg w-full mt-2 cursor-pointer">
+      <Link
+        href={`/place/${id}`}
+        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg w-full mt-2 cursor-pointer text-center"
+      >
         Ver más
-      </button>
+      </Link>
     </div>
   );
 }
