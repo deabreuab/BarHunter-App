@@ -1,6 +1,6 @@
 "use client";
 
-import { Header, Sidebar } from "./components";
+import { BottomNavbar, Header, Sidebar } from "./components";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       {/* Version web */}
       <div className="container mx-auto px-4 py-6">
         <Sidebar />
-
+        <BottomNavbar />
       </div>
     </div>
   );
