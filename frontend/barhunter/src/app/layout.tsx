@@ -31,7 +31,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 py-6 flex">
             <Sidebar />
             {/* main content */}
-            <main className="flex-1 p-5">{children}</main>
+            <main className="flex-1 p-5 overflow-x-hidden">{children}</main>
             <BottomNavbar />
           </div>
         </div>
