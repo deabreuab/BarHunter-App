@@ -8,7 +8,7 @@ import { RiMap2Line } from "react-icons/ri";
 function Sidebar() {
   return (
     <div className="hidden md:flex">
-      <div className="w-64 bg-customcolors-darkblue border-r border-gray-800 min-h-[calc(100vh-80px)] pr-6">
+      <div className="w-64 bg-customcolors-darkblue border-r border-gray-800 min-h-[calc(100vh-120px)] pr-6">
         <ul className="flex flex-col space-y-6 py-8">
           <li className="flex items-center space-x-3 text-gray-400 cursor-pointer hover:text-white">
             <LuCompass className="w-5 h-5"/>
