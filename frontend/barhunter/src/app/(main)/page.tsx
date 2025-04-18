@@ -1,6 +1,4 @@
-"use client";
-
-import { Card, Slide } from "./components";
+import { Card, Slide } from "../components";
 
 export default function Home() {
   return (
