@@ -24,7 +24,7 @@ const config: Config = {
     extend: {
       colors: {
         // Custom Colors
-        customcolor: {
+        customcolors: {
           lightgray: '#EEEEEE',
           darkblue: '#010316',
           brightblue: '#3540E8',

@@ -1,12 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { Header } from "./components";
 
 export default function Home() {
   return (
-    <div className="bg-customcolor-darkblue">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-      </h1>
+    <div className="min-h-screen bg-customcolors-darkblue text-white">
+      <Header />
     </div>
   );
 }
