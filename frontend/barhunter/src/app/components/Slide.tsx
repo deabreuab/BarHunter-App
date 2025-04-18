@@ -10,7 +10,7 @@ interface SlideProps {
 export const Slide: React.FC<SlideProps> = ({ children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     if (containerRef.current) {
