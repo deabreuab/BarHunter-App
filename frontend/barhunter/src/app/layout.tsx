@@ -30,8 +30,7 @@ export default function RootLayout({
           <Header />
             <div className="m-0 p-0 md:mx-auto md:px-4 md:container md:py-6 flex">
             <Sidebar />
-            {/* main content */}
-            <main className="flex-1 p-0 md:p-5 overflow-x-hidden">{children}</main>
+            <main className="flex-1 p-0 mb-[80px] md:mb-0 md:p-5 overflow-x-hidden">{children}</main>
             <BottomNavbar />
             </div>
         </div>
