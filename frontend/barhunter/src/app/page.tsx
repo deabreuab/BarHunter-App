@@ -1,23 +1,26 @@
 "use client";
 
-import { Slide } from "./components";
+import { Card, Slide } from "./components";
 
 export default function Home() {
   return (
     <div>
       <h1 className="text-3xl font-bold text-white mb-6">Todas las opciones</h1>
-      <div className="max-w-full overflow-hidden">
+      <div className="max-w-full overflow-hidden p-4">
         <Slide>
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="bg-blue-200 p-4 rounded-xl shadow">
-              Card {i}
-            </div>
+            <Card key={i} />
           ))}
         </Slide>
       </div>
       <h1 className="text-3xl font-bold text-white mb-6">
         Opciones en California
       </h1>
+      <Slide>
+        {[1, 2, 3].map((i) => (
+          <Card key={i} />
+        ))}
+      </Slide>
     </div>
   );
 }
