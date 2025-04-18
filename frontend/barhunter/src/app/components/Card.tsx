@@ -1,11 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlinePlace } from "react-icons/md";
+import { Brewery } from "../(main)/types";
 
-function Card() {
+
+function Card({ name, address_1, city, phone }: Brewery) {
   return (
     <div className="bg-[#0f172a] text-white p-4 rounded-lg shadow-md max-w-sm flex flex-col gap-4">
-      <h2 className="text-lg font-bold">Bar Nim</h2>
+      <h2 className="text-lg font-bold">{name}</h2>
       <div className="flex items-center gap-4">
         <img
           src="https://placehold.co/50"
@@ -16,15 +19,15 @@ function Card() {
           <div className="flex items-center text-sm mb-1">
             <MdOutlinePlace className="w-5 h-5 inline-block mr-1" />
             <span
-              title="Havre 73, Juárez, Cuauhtémoc"
+              title={`${address_1}, ${city}`}
               className="text-sm overflow-hidden text-ellipsis whitespace-nowrap block w-full max-w-[160px]"
             >
-              Havre 73, Juárez, Cuauhtémoc
+              {address_1}, {city}
             </span>
           </div>
           <div className="flex items-center text-sm mb-1 gap-1">
             <FaPhoneAlt className="w-4 h-4 inline-block mr-1" />
-            <span className="text-sm">51 119 922 123</span>
+            <span className="text-sm">{phone}</span>
           </div>
         </div>
       </div>

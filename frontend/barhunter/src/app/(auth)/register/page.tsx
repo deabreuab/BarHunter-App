@@ -6,7 +6,6 @@ function Register() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-[#010316] p-4">
       <div className="w-full max-w-md">
-        {/* Logo y Título */}
         <div className="flex flex-col items-center mb-8">
           <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#3540E8] to-[#E41AD6] flex items-center justify-center mb-4"></div>
           <h1 className="text-4xl font-bold gradient-text mb-2">Bar Hunter</h1>
@@ -15,7 +14,6 @@ function Register() {
           </p>
         </div>
 
-        {/* Formulario de Registro */}
         <div className="bg-[#0a0a20] rounded-xl p-6 shadow-lg border border-gray-800">
           <div className="flex items-center mb-4">
             <Link
@@ -129,7 +127,6 @@ function Register() {
           </form>
         </div>
 
-        {/* Login Link */}
         <div className="mt-6 text-center">
           <p className="text-[#EEEEEE]">
             ¿Ya tienes una cuenta?{" "}
