@@ -8,6 +8,7 @@
   "scripts": {
     "prebuild": "npx prisma generate",
     "build": "nest build",
+    "vercel-build": "echo vercel-build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
