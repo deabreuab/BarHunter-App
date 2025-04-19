@@ -22,7 +22,7 @@ function Login() {
       toast.success("Login exitoso");
       router.push("/");
     },
-    onError: (error: any) => {
+    onError: () => {
       toast.error("Ocurrió un error durante el registro");
     },
   });

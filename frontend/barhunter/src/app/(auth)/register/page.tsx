@@ -21,7 +21,7 @@ function Register() {
       toast.success("Registro exitoso");
       router.push("/login");
     },
-    onError: (error: any) => {
+    onError: () => {
       toast.error("Ocurrió un error durante el registro");
     },
   });
