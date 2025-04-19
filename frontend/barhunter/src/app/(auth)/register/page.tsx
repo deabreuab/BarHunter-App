@@ -6,8 +6,26 @@ import { useForm } from "react-hook-form";
 import { IoArrowBack } from "react-icons/io5";
 import { RegisterFormData } from "../types";
 import { DevTool } from "@hookform/devtools";
+import { useMutation } from "@tanstack/react-query";
+import { registerUser } from "../hooks/useRegister";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 function Register() {
+  const router = useRouter();
+
+  const mutation = useMutation({
+    mutationFn: registerUser,
+    onSuccess: () => {
+      toast.success("Registro exitoso");
+      router.push("/login");
+    },
+    onError: (error: any) => {
+      toast.error("Ocurrió un error durante el registro");
+    },
+  });
+
   const {
     register,
     handleSubmit,
@@ -27,10 +45,12 @@ function Register() {
   console.log("🚀 ~ Register ~ errors:", errors);
   const onSubmit = (data: RegisterFormData) => {
     console.log(data);
+    mutation.mutate(data);
   };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-[#010316] p-4">
+      <ToastContainer />
       <div className="w-full max-w-md">
         <div className="flex flex-col items-center mb-8">
           <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#3540E8] to-[#E41AD6] flex items-center justify-center mb-4"></div>
@@ -184,12 +204,19 @@ function Register() {
               )}
             </div>
 
-            <button
-              type="submit"
-              className="w-full gradient-button text-white py-3 px-6 rounded-md font-medium hover:opacity-90 transition-opacity"
-            >
-              Registrarse
-            </button>
+            <div className="flex justify-center mt-8">
+              <button
+                type="submit"
+                disabled={mutation.isPending}
+                className={`cursor-pointer px-[2px] py-[2px] text-white font-semibold rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 ${
+                  mutation.isPending ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              >
+                <span className="block bg-[#02031b] rounded-md px-10 py-2">
+                  {mutation.isPending ? "Registrando..." : "Registrarse"}
+                </span>
+              </button>
+            </div>
             <DevTool control={control} />
           </form>
         </div>

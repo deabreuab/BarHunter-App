@@ -1,7 +1,6 @@
-import { useMutation } from "@tanstack/react-query";
 import { RegisterFormData } from "../types";
 
-async function registerUser(data: RegisterFormData) {
+export async function registerUser(data: RegisterFormData) {
   const url = `https://barhunter-backend.vercel.app/auth/register`;
   const response = await fetch(url, {
     method: "POST",
@@ -16,15 +15,4 @@ async function registerUser(data: RegisterFormData) {
   }
 
   return response.json();
-}
-
-export function useRegister() {
-  return useMutation<any, Error, RegisterFormData>(registerUser, {
-    onSuccess: () => {
-      alert("Registro exitoso");
-    },
-    onError: (error: any) => {
-      alert(error.message || "Error al registrar");
-    },
-  });
 }
