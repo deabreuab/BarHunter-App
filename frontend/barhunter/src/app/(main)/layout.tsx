@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { BottomNavbar, Header, Sidebar } from "../components";
 import withAuth from "../utils/withAuth";
