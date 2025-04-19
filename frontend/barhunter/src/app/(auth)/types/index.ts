@@ -5,3 +5,8 @@ export type RegisterFormData = {
   confirmPassword: string;
   terms: boolean;
 };
+
+export type LoginFormData = {
+  email: string;
+  password: string;
+};

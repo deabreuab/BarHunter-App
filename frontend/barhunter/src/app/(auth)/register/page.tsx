@@ -42,7 +42,6 @@ function Register() {
     },
   });
 
-  console.log("🚀 ~ Register ~ errors:", errors);
   const onSubmit = (data: RegisterFormData) => {
     console.log(data);
     mutation.mutate(data);
