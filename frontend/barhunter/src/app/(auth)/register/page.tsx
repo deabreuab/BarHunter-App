@@ -160,21 +160,23 @@ function Register() {
               )}
             </div>
 
-            <div className="flex items-center">
-              <input
-                {...register("terms", {
-                  required: "Debes aceptar los términos y condiciones",
-                })}
-                type="checkbox"
-                id="terms"
-                className="w-4 h-4 mr-2 accent-[#E41AD6]"
-              />
-              <label htmlFor="terms" className="text-sm text-[#EEEEEE]">
-                Acepto los{" "}
-                <Link href="#" className="text-[#E41AD6] hover:underline">
-                  términos y condiciones
-                </Link>
-              </label>
+            <div>
+              <div className="flex items-center mb-4">
+                <input
+                  {...register("terms", {
+                    required: "Debes aceptar los términos y condiciones",
+                  })}
+                  type="checkbox"
+                  id="terms"
+                  className="w-4 h-4 mr-2 accent-[#E41AD6]"
+                />
+                <label htmlFor="terms" className="text-sm text-[#EEEEEE]">
+                  Acepto los{" "}
+                  <Link href="#" className="text-[#E41AD6] hover:underline">
+                    términos y condiciones
+                  </Link>
+                </label>
+              </div>
               {errors.terms && (
                 <span className="text-red-500 text-sm">
                   {errors.terms.message}
