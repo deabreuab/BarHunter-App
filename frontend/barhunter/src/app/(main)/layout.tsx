@@ -1,10 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BottomNavbar, Header, Sidebar } from "../components";
+import withAuth from "../utils/withAuth";
 
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-customcolors-darkblue text-white">
       <Header />
@@ -18,3 +16,5 @@ export default function MainLayout({
     </div>
   );
 }
+
+export default withAuth(MainLayout as React.ComponentType<any>);
