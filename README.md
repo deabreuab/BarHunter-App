@@ -1,5 +1,4 @@
-# 🍻 Bar Hunter – Prueba Técnica
-
+# 🍻 Bar Hunter 
 Aplicación desarrollada como prueba técnica para explorar y visualizar bares/cervecerías en Estados Unidos utilizando la [Open Brewery DB API](https://www.openbrewerydb.org/). Los usuarios pueden buscar cervecerías, ver detalles individuales y opiniones.
 
 ---
