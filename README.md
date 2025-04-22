@@ -38,7 +38,19 @@ Aplicación desarrollada como prueba técnica para explorar y visualizar bares/c
 - **Diseño mobile-first:** La UI está optimizada para adaptarse bien desde celulares hasta pantallas grandes.
 
 ---
+## 🧩 Desafíos y resoluciones
 
+- **Adaptarme a Next.js 15 y App Router:** Fue mi primer proyecto usando esta versión, así que aprendí sobre la estructura `/app`, cómo usar `Link`, layouts persistentes y las convenciones modernas de Next.
+
+- **Aprender React Query:** Aunque no lo había usado antes, entendí rápidamente su poder para manejar estados de datos, errores y caché sin esfuerzo adicional.
+
+- **Diseño personalizado con Tailwind:** Diseñé los componentes respetando una identidad visual (degradados, espaciados y tipografías) directamente desde Figma.
+
+- **Conexión entre vistas:** Aprendí cómo pasar el ID de la cervecería desde la lista a la vista de detalle mediante rutas dinámicas en Next.
+
+- **Separación de lógica y componentes:** Opté por crear una capa de servicios (`api/breweries`) para mantener limpio el código del frontend.
+
+---
 
 ## 📝 Notas
 
